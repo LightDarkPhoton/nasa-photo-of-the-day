@@ -32,8 +32,8 @@ function App() {
       })
   }, [])
 
-  const Friend = ({ info }) => (
-    <div className='friend'>
+  const Title = ({ info }) => (
+    <div className='title'>
       {info.name}
       <h1>
         {info.title}
@@ -49,7 +49,7 @@ function App() {
         //   console.log(elem)
         //   return <Friend info={elem} key={1}/>
         // })
-        <Friend info={data}/>
+        <Title info={data}/>
       }
       
       {
