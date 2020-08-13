@@ -53,8 +53,11 @@ function App() {
       }
       
       {
-        <Image copyright={data.copyright} date={data.date} imageURL={data.url} explanation={data.explanation}/>
+        <Image data={data} />
       }
+      {/* {
+        <Image copyright={data.copyright} date={data.date} imageURL={data.url} explanation={data.explanation}/>
+      } */}
       <p>
         <span role="img" aria-label='go!'>🚀</span>!
       </p>
