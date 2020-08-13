@@ -2,11 +2,10 @@ import React, {useState, useEffect} from "react";
 import "./App.css";
 import { BASE_URL, API_KEY } from './constants/index'
 
-
-
-
 // If axios is not present in project, run 'npm i axios --save' in Terminal
 import axios from 'axios'
+
+import Image from './components/image'
 
 function App() {
 
@@ -36,9 +35,9 @@ function App() {
   const Friend = ({ info }) => (
     <div className='friend'>
       {info.name}
-      <p>
-        See details {info.copyright}
-      </p>
+      <h1>
+        {info.title}
+      </h1>
     </div>
   )
 
@@ -46,14 +45,18 @@ function App() {
     <div className="App">
       {
         // Because NASA returns a single item, in order to "map" over it, I added it to an array
-        [data].map( elem => {
-          console.log(elem)
-          return <Friend info={elem}/>
-        })
+        // [data].map( elem => {
+        //   console.log(elem)
+        //   return <Friend info={elem} key={1}/>
+        // })
+        <Friend info={data}/>
+      }
+      
+      {
+        <Image copyright={data.copyright} date={data.date} imageURL={data.url} explanation={data.explanation}/>
       }
       <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
+        <span role="img" aria-label='go!'>🚀</span>!
       </p>
     </div>
   );
